@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="details-screen.component.css">
+
+<div class="bg">
+
+    <div class="text-center text-light" *ngIf="recipe">
+        <h3>{{ recipe.title }}</h3>
+        <img [src]="recipe.image" alt="{{ recipe.title }}">
+        <div  class="text-center">
+          <h3 class="text-info ">Ingredients</h3>
+          <div class="text-center ">
+            <li class="list-group-item " *ngFor="let ingredient of recipe.extendedIngredients">
+              {{ ingredient.original }}
+            </li>
+        </div>
+        </div>
+        <div>
+          <h3 class="text-info ">Instructions</h3>
+          <ul>
+            <li *ngFor="let step of recipe.analyzedInstructions[0].steps">
+              {{ step.step }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    

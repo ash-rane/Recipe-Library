@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="showing-search-result.component.css">
+
+<div class="bg">
+
+    <div>
+        <h3 class="text-light text-center ">Showing Results for "{{ query }}"</h3>
+        <div *ngIf="recipes.length">
+          <div *ngFor="let recipe of recipes" class="text-center text-light ">
+            <h4>{{ recipe.title }}</h4>
+            <a [routerLink]="['/recipe', recipe.id]">
+              <img [src]="recipe.image" alt="{{ recipe.title }}">
+            </a>
+          </div>
+        </div>
+        <div *ngIf="!recipes.length && query">
+          No results found.
+        </div>
+      </div>
+      
+      
+    </div>
